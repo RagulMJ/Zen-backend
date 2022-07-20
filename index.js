@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+  }
+
+
 const express = require('express');
 const app = express()
 
@@ -10,6 +15,8 @@ const jwt = require('jsonwebtoken');
 
 const mongoClient = mongodb.MongoClient;
 const URL = 'mongodb+srv://Ragul_praveen:Ragul@123@cluster0.a8imc.mongodb.net/?retryWrites=true&w=majority';
+const port = process.env.PORT || 5000
+
 
 app.use(
     cors({
@@ -175,6 +182,6 @@ app.post('/login', async (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 3001, () => {
-    console.log("webserver started")
+app.listen(port, () => {
+    console.log(`webserver started on port ${port}`)
 })
