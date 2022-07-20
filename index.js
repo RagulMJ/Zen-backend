@@ -10,8 +10,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const mongoClient = mongodb.MongoClient;
-const URL = 'mongodb+srv://Ragul_praveen:Ragul@123@cluster0.a8imc.mongodb.net/zenclass?retryWrites=true&w=majority';
-const port = process.env.PORT || 5000
+const URL = 'mongodb+srv://Ragul_praveen:tPyNQTVF5hH5tvz0@cluster0.a8imc.mongodb.net/zenclass?retryWrites=true&w=majority';
+const port = process.env.PORT || 3001
 
 
 app.use(
