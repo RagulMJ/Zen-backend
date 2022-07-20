@@ -98,28 +98,6 @@ app.get('/dashboard', async (req, res) => {
     }
 });
 
-app.get('/login', authenticate, async (req, res) => {
-
-    try {
-
-        let connection = await mongoClient.connect(URL);
-
-        let db = connection.db('zenclass');
-        console.log(req)
-        let students = await db
-            .collection('student')
-            .findOne({ _id: req.body.userId })
-            .toArray();
-
-        await connection.close();
-
-        res.json(students);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: 'Something went wrong' });
-    }
-});
-
 app.put('/profile/:id', authenticate, async (req, res) => {
     try {
         let connection = await mongoClient.connect(URL);
