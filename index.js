@@ -36,6 +36,10 @@ function authenticate(req, res, next) {
     }
 }
 
+app.get("/",(req,res) => {
+    res.send("Webserver start running")
+});
+
 app.get('/profile/:id', async (req, res) => {
     try {
 
@@ -89,7 +93,7 @@ app.get('/dashboard', async (req, res) => {
 
         let students = await db
             .collection('student')
-            .find({ _id : req.b._id })
+            .find({ _id : req._id })
             .toArray();
 
         await connection.close();
