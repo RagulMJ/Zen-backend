@@ -1,8 +1,4 @@
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-  }
-
-
+require("dotenv").config();
 const express = require('express');
 const app = express()
 
@@ -14,7 +10,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const mongoClient = mongodb.MongoClient;
-const URL = 'mongodb+srv://Ragul_praveen:Ragul@123@cluster0.a8imc.mongodb.net/?retryWrites=true&w=majority';
+const URL = 'mongodb+srv://Ragul_praveen:Ragul@123@cluster0.a8imc.mongodb.net/zenclass?retryWrites=true&w=majority';
 const port = process.env.PORT || 5000
 
 
